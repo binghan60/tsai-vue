@@ -1,0 +1,20 @@
+:root {
+  --primary-color: #50653e;
+  --secondary-color: #d4dbb1;
+  --white: #fff;
+  --text: #fff8ef;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #50653e;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
