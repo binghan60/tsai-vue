@@ -10,6 +10,22 @@
   padding: 0;
   margin: 0;
 }
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: auto;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 適用於 Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 body {
   background-color: #50653e;
 }

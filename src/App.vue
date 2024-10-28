@@ -12,3 +12,9 @@ export default {
   <RouterView />
 </template>
 
+
+<style>
+body {
+  background-color: var(--primary-color);
+}
+</style>
