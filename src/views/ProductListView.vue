@@ -9,7 +9,7 @@
       </div>
       <div class="product-container">
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/dates.png" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">13號 珍蜜</h5>
             <div class="quantity-control">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/dates.png" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">11號 雪麗</h5>
             <div class="quantity-control">
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/sugarcane.png" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">白玉甘蔗汁</h5>
             <div class="quantity-control">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/guava.png" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">紅心芭樂</h5>
             <div class="quantity-control">
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/white-guava.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">少籽白芭樂</h5>
             <div class="quantity-control">
@@ -69,7 +69,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/yam-leaf.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">地瓜葉</h5>
             <div class="quantity-control">
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/eggplant.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">茄子</h5>
             <div class="quantity-control">
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/asparagus.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">蘆筍</h5>
             <div class="quantity-control">
@@ -161,8 +161,9 @@ h2 {
 /* 商品图片样式 */
 .product-image {
   width: 100%;
-  height: auto;
-  border-radius: 10px 10px 0 0;
+  height: 250px; /* 固定高度，可以根据需求调整 */
+  object-fit: cover; /* 图片填满容器并裁剪多余部分 */
+  border-radius: 10px 10px 0 0; /* 与卡片圆角一致 */
 }
 
 /* 商品信息样式 */
