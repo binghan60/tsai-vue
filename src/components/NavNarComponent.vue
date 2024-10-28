@@ -10,8 +10,8 @@
     </ul>
   </nav>
 </template>
-  
-  <script>
+
+<script>
 export default {
   data() {
     return {
@@ -25,10 +25,10 @@ export default {
   },
 }
 </script>
-  
+
 <style scoped>
 nav {
-  height: 50px;
+  height: var(--navbar-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,10 +46,40 @@ nav a {
   font-size: 16px;
   font-weight: 700;
 }
+
+nav a {
+  color: var(--secondary);
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 150, 0.7),
+    rgba(0, 204, 255, 0.7)
+  );
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
 nav a:hover {
   color: var(--white);
 }
 
+nav a:hover::before {
+  transform: scaleX(1);
+}
 nav .logo {
   font-size: 28px;
   font-weight: bold;
@@ -59,26 +89,36 @@ nav .logo {
 nav .menu {
   display: flex;
   list-style: none;
+  margin-bottom: 0;
 }
 
 .menu-toggle {
   display: none;
+  user-select: none;
+  color: var(--secondary);
+}
+
+.menu-toggle:hover {
+  color: var(--white);
 }
 
 @media (max-width: 768px) {
   nav .menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: calc(var(--navbar-height) - 5px);
     right: 0;
     background-color: var(--primary-color);
     width: 100%;
     text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
   }
 
   nav .menu.open {
-    display: flex;
+    max-height: 300px; /* 根據項目數量可調整 */
   }
 
   .menu-toggle {
@@ -88,4 +128,3 @@ nav .menu {
   }
 }
 </style>
-  
