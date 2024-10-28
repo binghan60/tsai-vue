@@ -1,12 +1,17 @@
 <template>
   <nav>
-    <div class="logo"></div>
+    <RouterLink to="/">
+      <div class="logo">
+        <img style="width: auto; height: 100%" src="/img/logo.png" alt="" />
+      </div>
+    </RouterLink>
     <div class="menu-toggle" @click="toggleMenu">☰</div>
     <ul :class="['menu', { open: isMenuOpen }]">
       <a @click="chagnePage('/')"><li>首頁</li></a>
       <a @click="chagnePage('/about')"><li>關於我們</li></a>
       <a @click="chagnePage('/productlist')"><li>商品列表</li></a>
       <a @click="chagnePage('/contactus')"><li>聯絡我們</li></a>
+      <a @click="chagnePage('/cart')"><li>購物車</li></a>
     </ul>
   </nav>
 </template>
@@ -68,11 +73,7 @@ nav a::before {
   right: 0;
   bottom: -3px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 0, 150, 0.7),
-    rgba(0, 204, 255, 0.7)
-  );
+  background: linear-gradient(90deg, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7));
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -85,9 +86,7 @@ nav a:hover::before {
   transform: scaleX(1);
 }
 nav .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--text);
+  height: 40px;
 }
 
 nav .menu {
@@ -127,6 +126,9 @@ nav .menu {
 
   nav .menu.open {
     max-height: 300px;
+  }
+  nav a {
+    margin: 0;
   }
 
   .menu-toggle {
