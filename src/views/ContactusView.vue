@@ -14,7 +14,7 @@ export default {
 </script>
 <style scoped>
 .contactus {
-  color: #fff;
+  color: var(--primary-color);
   font-size: 32px;
   font-weight: 700;
 }

@@ -15,6 +15,6 @@ export default {
 
 <style>
 body {
-  background-color: var(--primary-color);
+  background-color: var(--bgc);
 }
 </style>

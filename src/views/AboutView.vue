@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .about {
-  color: #fff;
+  color: var(--primary-color);
   font-size: 32px;
   font-weight: 700;
 }
