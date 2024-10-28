@@ -1,26 +1,31 @@
 <script>
-import { RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 
 export default {
-  components: { RouterView },
+  components: { RouterView, RouterLink },
 }
 </script>
 
 <template>
   <div class="wraper">
     <div class="container">
-      <div class="logo">
-        <div class="box">
-          <img src="/img/logo.png" alt="" />
-          <h1>蔡氏小農</h1>
-          <p>農產品 | 果物</p>
+      <RouterLink to="/">
+        <div class="logo">
+          <div class="box">
+            <img src="/img/logo.png" alt="" />
+            <h1>蔡氏小農</h1>
+            <p>農產品 | 果物</p>
+          </div>
         </div>
-      </div>
+      </RouterLink>
     </div>
+    <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="main container">
       <h3>Since 2022</h3>
-      <button type="button">立即購買</button>
+      <RouterLink to="productlist">
+        <button type="button">立即購買</button>
+      </RouterLink>
     </div>
     <div class="spacer"></div>
   </div>
@@ -48,13 +53,18 @@ export default {
 }
 .box img {
   width: 100px;
+  user-select: none;
 }
 .box h1 {
   font-size: 36px;
+  user-select: none;
+  color: white;
 }
 .box p {
   font-size: 20px;
   letter-spacing: 2px;
+  user-select: none;
+  color: white;
 }
 .logo {
   text-align: left;
@@ -64,6 +74,7 @@ export default {
   font-size: 56px;
   font-weight: 900;
   margin-bottom: 25px;
+  user-select: none;
 }
 
 .main {
@@ -74,6 +85,7 @@ export default {
 }
 .main h3 {
   font-size: 108px;
+  text-decoration: none;
 }
 .main button {
   margin-top: 60px;
@@ -89,11 +101,20 @@ export default {
   color: var(--white);
   cursor: pointer;
   white-space: nowrap;
+  transition: 0.5s;
+  user-select: none;
+}
+.main button:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
 }
 .spacer {
   flex: 1;
 }
-
+a {
+  text-decoration: none;
+}
 /* 小螢幕 */
 @media (max-width: 768px) {
   .wraper .box {
