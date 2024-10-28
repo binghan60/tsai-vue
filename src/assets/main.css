@@ -3,6 +3,7 @@
   --secondary-color: #d4dbb1;
   --white: #fff;
   --text: #fff8ef;
+  --navbar-height: 50px;
 }
 * {
   box-sizing: border-box;
@@ -11,10 +12,4 @@
 }
 body {
   background-color: #50653e;
-}
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 15px;
 }
