@@ -3,10 +3,10 @@
     <div class="logo"></div>
     <div class="menu-toggle" @click="toggleMenu">☰</div>
     <ul :class="['menu', { open: isMenuOpen }]">
-      <li><a href="#">首頁</a></li>
-      <li><a href="#">品牌介紹</a></li>
-      <li><a href="#">商品列表</a></li>
-      <li><a href="#">聯絡我們</a></li>
+      <a @click="chagnePage('/')"><li>首頁</li></a>
+      <a @click="chagnePage('/about')"><li>關於我們</li></a>
+      <a @click="chagnePage('/productlist')"><li>商品列表</li></a>
+      <a @click="chagnePage('/contactus')"><li>聯絡我們</li></a>
     </ul>
   </nav>
 </template>
@@ -21,6 +21,10 @@ export default {
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
+    },
+    chagnePage(path) {
+      this.$router.push(path)
+      this.isMenuOpen = false
     },
   },
 }
@@ -101,13 +105,17 @@ nav .menu {
 .menu-toggle:hover {
   color: var(--white);
 }
+.menu li {
+  cursor: pointer;
+  user-select: none;
+}
 
 @media (max-width: 768px) {
   nav .menu {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: calc(var(--navbar-height) - 5px);
+    top: calc(var(--navbar-height) - 0px);
     right: 0;
     background-color: var(--primary-color);
     width: 100%;
@@ -118,13 +126,20 @@ nav .menu {
   }
 
   nav .menu.open {
-    max-height: 300px; /* 根據項目數量可調整 */
+    max-height: 300px;
   }
 
   .menu-toggle {
     display: block;
     cursor: pointer;
     font-size: 24px;
+  }
+  .menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 100%;
   }
 }
 </style>
