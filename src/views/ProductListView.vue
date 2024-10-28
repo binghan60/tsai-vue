@@ -4,12 +4,12 @@
       <div class="title">
         <h2>找新鮮嗎? <span class="line-break">來棗我們吧</span></h2>
         <div>
-          <img src="/public/img/Hi.svg" alt="" />
+          <img src="/img/Hi.svg" alt="" />
         </div>
       </div>
       <div class="product-container">
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">13號 珍蜜</h5>
             <div class="quantity-control">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">11號 雪麗</h5>
             <div class="quantity-control">
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">白玉甘蔗汁</h5>
             <div class="quantity-control">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">紅心芭樂</h5>
             <div class="quantity-control">
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">少籽白芭樂</h5>
             <div class="quantity-control">
@@ -69,7 +69,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">地瓜葉</h5>
             <div class="quantity-control">
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">茄子</h5>
             <div class="quantity-control">
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="/public/img/product.jpg" class="product-image" alt="商品照片" />
+          <img src="/img/product.jpg" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">蘆筍</h5>
             <div class="quantity-control">
