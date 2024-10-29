@@ -120,7 +120,7 @@
   min-height: calc(100vh - var(--navbar-height));
 }
 .title {
-  padding-top: 30px;
+  padding: 30px 0;
   display: flex;
   align-items: center;
 }
