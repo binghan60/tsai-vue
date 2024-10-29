@@ -8,94 +8,13 @@
         </div>
       </div>
       <div class="product-container">
-        <div class="product-card">
-          <img src="/img/dates.png" class="product-image" alt="商品照片" />
+        <div v-for="item in productlist" :key="item.id" class="product-card">
+          <span class="product-category">{{ item.category }}</span>
+          <!-- 新增標籤 -->
+          <img :src="item.imageUrl" class="product-image" alt="商品照片" />
           <div class="product-info">
-            <h5 class="product-title">13號 珍蜜</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/dates.png" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">11號 雪麗</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/sugarcane.png" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">白玉甘蔗汁</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/guava.png" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">紅心芭樂</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/white-guava.jpg" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">少籽白芭樂</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/yam-leaf.jpg" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">地瓜葉</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/eggplant.jpg" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">茄子</h5>
-            <div class="quantity-control">
-              <button class="quantity-button">-</button>
-              <input type="number" min="1" class="quantity-input" />
-              <button class="quantity-button">+</button>
-            </div>
-            <button class="add-to-cart">加入購物車</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="/img/asparagus.jpg" class="product-image" alt="商品照片" />
-          <div class="product-info">
-            <h5 class="product-title">蘆筍</h5>
+            <h5 class="product-title">{{ item.title }}</h5>
+            <div class="product-price">{{ item.price }} 元/{{ item.unit }}</div>
             <div class="quantity-control">
               <button class="quantity-button">-</button>
               <input type="number" min="1" class="quantity-input" />
@@ -109,7 +28,40 @@
   </div>
 </template>
 
-
+<script>
+export default {
+  data() {
+    return {
+      productlist: [],
+    }
+  },
+  methods: {
+    async getProduct() {
+      try {
+        const response = await fetch(`https://vue3-course-api.hexschool.io/v2/api/binghank/products`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8 ',
+          },
+        })
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`)
+        }
+        const data = await response.json()
+        return data
+      } catch (error) {
+        alert('伺服器忙碌中，請稍後再試。')
+        console.error('GetStoreList', error)
+        throw error
+      }
+    },
+  },
+  async mounted() {
+    const productData = await this.getProduct()
+    this.productlist = productData.products
+  },
+}
+</script>
 
 <style scoped>
 .line-break {
@@ -128,7 +80,6 @@ h2 {
   margin: 0;
   font-size: 64px;
   font-weight: 700;
-  color: white;
   color: var(--primary-color);
   padding-right: 24px;
 }
@@ -144,9 +95,9 @@ h2 {
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   background-color: #f5e1c9;
+  padding: 20px;
 }
 
-/* 卡片样式 */
 .product-card {
   background-color: #fff;
   border-radius: 10px;
@@ -156,17 +107,35 @@ h2 {
   flex-direction: column;
   align-items: center;
   padding: 15px;
+  position: relative; /* 用於定位標籤 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 商品图片样式 */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .product-image {
   width: 100%;
-  height: 250px; /* 固定高度，可以根据需求调整 */
-  object-fit: cover; /* 图片填满容器并裁剪多余部分 */
-  border-radius: 10px 10px 0 0; /* 与卡片圆角一致 */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
-/* 商品信息样式 */
 .product-info {
   text-align: center;
   margin-top: 15px;
@@ -174,11 +143,17 @@ h2 {
 
 .product-title {
   color: #50653e;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
-/* 数量控制样式 */
+.product-price {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .quantity-control {
   display: flex;
   align-items: center;
@@ -193,6 +168,11 @@ h2 {
   cursor: pointer;
   font-size: 1.2rem;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #3e4f2d;
 }
 
 .quantity-input {
@@ -205,7 +185,6 @@ h2 {
   border-radius: 5px;
 }
 
-/* 加入购物车按钮样式 */
 .add-to-cart {
   background-color: #50653e;
   color: white;
@@ -215,12 +194,14 @@ h2 {
   cursor: pointer;
   width: 100%;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .add-to-cart:hover {
   background-color: #3e4f2d;
+  transform: scale(1.05);
 }
+
 @media (max-width: 768px) {
   .line-break {
     display: block;
@@ -230,18 +211,11 @@ h2 {
     justify-content: center;
   }
   h2 {
-    margin: 0;
     font-size: 32px;
-    font-weight: 700;
-    color: white;
-    color: var(--primary-color);
-    padding-right: 24px;
   }
 
   .title img {
     width: 75px;
-    color: rgb(245, 225, 201);
-    background-color: rgb(245, 225, 201);
   }
 }
 </style>
