@@ -9,15 +9,13 @@ export default {
 <template>
   <div class="wraper">
     <div class="container">
-      <RouterLink to="/">
-        <div class="logo">
-          <div class="box">
-            <img src="/img/logo.png" alt="" />
-            <h1>蔡氏小農</h1>
-            <p>農產品 | 果物</p>
-          </div>
+      <div class="logo">
+        <div class="box">
+          <img src="/img/logo.png" alt="" />
+          <h1>蔡氏小農</h1>
+          <p>農產品 | 果物</p>
         </div>
-      </RouterLink>
+      </div>
     </div>
     <div class="spacer"></div>
     <div class="spacer"></div>
