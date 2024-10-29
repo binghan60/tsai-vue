@@ -6,6 +6,12 @@
   --navbar-height: 50px;
   --bgc: #f5e1c9;
 }
+html {
+  overflow: overlay;
+}
+::-webkit-scrollbar {
+  display: none;
+}
 * {
   box-sizing: border-box;
   padding: 0;
