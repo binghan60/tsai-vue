@@ -1,13 +1,13 @@
 <template>
   <nav>
-    <RouterLink to="/">
+    <a @click="chagnePage('/')">
       <div class="logo">
         <img style="width: auto; height: 100%" src="/img/logo.png" alt="" />
       </div>
-    </RouterLink>
+    </a>
     <div class="menu-toggle" @click="toggleMenu">☰</div>
     <ul :class="['menu', { open: isMenuOpen }]">
-      <a @click="chagnePage('/')"><li>首頁</li></a>
+      <a @click="chagnePage('/member')"><li>會員中心</li></a>
       <a @click="chagnePage('/about')"><li>關於我們</li></a>
       <a @click="chagnePage('/productlist')"><li>商品列表</li></a>
       <a @click="chagnePage('/contactus')"><li>聯絡我們</li></a>
