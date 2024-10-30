@@ -97,7 +97,7 @@ export default {
           title: '商品 A',
           price: 500,
           quantity: 2,
-          imageUrl: '/public/img/dates.png',
+          imageUrl: '/img/dates.png',
         },
         {
           id: 2,
