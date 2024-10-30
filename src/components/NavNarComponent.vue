@@ -8,9 +8,8 @@
     <div class="menu-toggle" @click="toggleMenu">☰</div>
     <ul :class="['menu', { open: isMenuOpen }]">
       <a @click="chagnePage('/member')"><li>會員中心</li></a>
-      <a @click="chagnePage('/about')"><li>關於我們</li></a>
+      <a @click="chagnePage('/about')"><li>品牌故事</li></a>
       <a @click="chagnePage('/productlist')"><li>商品列表</li></a>
-      <a @click="chagnePage('/contactus')"><li>聯絡我們</li></a>
       <a @click="chagnePage('/cart')"><li>購物車</li></a>
     </ul>
   </nav>
@@ -107,6 +106,9 @@ nav .menu {
 .menu li {
   cursor: pointer;
   user-select: none;
+  z-index: 100;
+  position: relative;
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
