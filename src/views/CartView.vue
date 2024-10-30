@@ -97,7 +97,7 @@ export default {
           title: '商品 A',
           price: 500,
           quantity: 2,
-          imageUrl: 'https://binghan60.github.io/tsai-vue/img/sugarcane.png',
+          imageUrl: '/public/img/dates.png',
         },
         {
           id: 2,
