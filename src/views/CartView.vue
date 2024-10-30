@@ -104,7 +104,7 @@ export default {
           title: '商品 B',
           price: 300,
           quantity: 1,
-          imageUrl: 'https://binghan60.github.io/tsai-vue/img/sugarcane.png',
+          imageUrl: '/img/sugarcane.png',
         },
       ],
       shippingFee: 60,
