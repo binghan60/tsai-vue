@@ -9,47 +9,79 @@
       </div>
 
       <!-- 購物車商品列表 -->
-      <div class="cart-items">
-        <h2>購物車商品列表</h2>
-        <div v-for="(item, index) in cartItems" :key="item.id" class="cart-item">
-          <div>
-            <img :src="item.imageUrl" alt="商品圖片" class="cart-item-image" />
-          </div>
-          <div class="cart-item-details">
-            <div style="flex: 1">
-              <h5 class="cart-item-title">{{ item.title }}</h5>
-              <div class="cart-item-price">單價: {{ item.price }} 元</div>
+      <template v-if="currentStep == 1">
+        <div class="cart-items">
+          <h2>購物車商品列表</h2>
+          <div v-for="(item, index) in cartItems" :key="item.id" class="cart-item">
+            <div>
+              <img :src="item.imageUrl" alt="商品圖片" class="cart-item-image" />
             </div>
-            <div class="quantity-control" style="flex: 1">
-              <button @click="decreaseQuantity(index)" class="quantity-button">-</button>
-              <input type="number" v-model.number="item.quantity" class="quantity-input" min="1" />
-              <button @click="increaseQuantity(index)" class="quantity-button">+</button>
+            <div class="cart-item-details">
+              <div style="flex: 1">
+                <h5 class="cart-item-title">{{ item.title }}</h5>
+                <div class="cart-item-price">單價: {{ item.price }} 元</div>
+              </div>
+              <div class="quantity-control" style="flex: 1">
+                <button @click="decreaseQuantity(index)" class="quantity-button">-</button>
+                <input type="number" v-model.number="item.quantity" class="quantity-input" min="1" />
+                <button @click="increaseQuantity(index)" class="quantity-button">+</button>
+              </div>
             </div>
+            <button @click="removeItem(index)" class="remove-item">刪除</button>
           </div>
-          <button @click="removeItem(index)" class="remove-item">刪除</button>
         </div>
-      </div>
 
-      <!-- 總計區域 -->
-      <div class="cart-summary">
-        <h3>總計</h3>
-        <div class="summary-item">
-          <span>商品總計:</span>
-          <span>{{ cartTotal }} 元</span>
+        <!-- 總計區域 -->
+        <div class="cart-summary">
+          <h3>總計</h3>
+          <div class="summary-item">
+            <span>商品總計:</span>
+            <span>{{ cartTotal }} 元</span>
+          </div>
+          <div class="summary-item">
+            <span>運費:</span>
+            <span>{{ shippingFee }} 元</span>
+          </div>
+          <div class="summary-item total">
+            <span>結帳總額:</span>
+            <span>{{ cartTotal + shippingFee }} 元</span>
+          </div>
+          <div class="actions">
+            <button class="continue-shopping" @click="goToShop">繼續購物</button>
+            <button class="checkout" @click="goToCheckout">前往結帳</button>
+          </div>
         </div>
-        <div class="summary-item">
-          <span>運費:</span>
-          <span>{{ shippingFee }} 元</span>
+      </template>
+      <template v-if="currentStep == 2">
+        <div class="shipping-form">
+          <h2>運送資訊</h2>
+          <form>
+            <div class="form-group">
+              <label for="name">收件人姓名</label>
+              <input type="text" id="name" v-model="name" required />
+            </div>
+            <div class="form-group">
+              <label for="address">地址</label>
+              <input type="text" id="address" v-model="address" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">電話</label>
+              <input type="tel" id="phone" v-model="phone" />
+            </div>
+            <div class="form-group">
+              <label for="deliveryMethod">運送方式</label>
+              <select id="deliveryMethod" v-model="deliveryMethod" required>
+                <option value="standard">常溫</option>
+                <option value="express">冷藏</option>
+              </select>
+            </div>
+            <div class="actions">
+              <button type="button" class="continue-shopping" @click="currentStep = 1">回購物車</button>
+              <button type="submit" class="checkout">下一步</button>
+            </div>
+          </form>
         </div>
-        <div class="summary-item total">
-          <span>結帳總額:</span>
-          <span>{{ cartTotal + shippingFee }} 元</span>
-        </div>
-        <div class="actions">
-          <button class="continue-shopping" @click="goToShop">繼續購物</button>
-          <button class="checkout" @click="goToCheckout">前往結帳</button>
-        </div>
-      </div>
+      </template>
     </div>
   </div>
 </template>
@@ -267,6 +299,36 @@ export default {
 .checkout:hover {
   background-color: #405331;
   transform: scale(1.05);
+}
+
+.shipping-form {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.shipping-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='tel'],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
