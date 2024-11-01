@@ -1,3 +1,53 @@
+<script>
+export default {
+  data() {
+    return {
+      currentStep: 1,
+      cartItems: [
+        {
+          id: 1,
+          title: '商品 A',
+          price: 500,
+          quantity: 2,
+          imageUrl: '/img/dates.png',
+        },
+        {
+          id: 2,
+          title: '商品 B',
+          price: 300,
+          quantity: 1,
+          imageUrl: '/img/sugarcane.png',
+        },
+      ],
+      shippingFee: 60,
+    }
+  },
+  computed: {
+    cartTotal() {
+      return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+    },
+  },
+  methods: {
+    increaseQuantity(index) {
+      this.cartItems[index].quantity++
+    },
+    decreaseQuantity(index) {
+      if (this.cartItems[index].quantity > 1) {
+        this.cartItems[index].quantity--
+      }
+    },
+    removeItem(index) {
+      this.cartItems.splice(index, 1)
+    },
+    goToShop() {
+      this.$router.push('/productlist')
+    },
+    goToCheckout() {
+      this.currentStep++
+    },
+  },
+}
+</script>
 <template>
   <div class="container">
     <div class="shopping-cart-page">
@@ -85,58 +135,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      currentStep: 1,
-      cartItems: [
-        {
-          id: 1,
-          title: '商品 A',
-          price: 500,
-          quantity: 2,
-          imageUrl: '/img/dates.png',
-        },
-        {
-          id: 2,
-          title: '商品 B',
-          price: 300,
-          quantity: 1,
-          imageUrl: '/img/sugarcane.png',
-        },
-      ],
-      shippingFee: 60,
-    }
-  },
-  computed: {
-    cartTotal() {
-      return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
-    },
-  },
-  methods: {
-    increaseQuantity(index) {
-      this.cartItems[index].quantity++
-    },
-    decreaseQuantity(index) {
-      if (this.cartItems[index].quantity > 1) {
-        this.cartItems[index].quantity--
-      }
-    },
-    removeItem(index) {
-      this.cartItems.splice(index, 1)
-    },
-    goToShop() {
-      this.$router.push('/productlist')
-    },
-    goToCheckout() {
-      this.currentStep++
-    },
-  },
-}
-</script>
-
 <style scoped>
 .shopping-cart-page {
   padding: 20px;
