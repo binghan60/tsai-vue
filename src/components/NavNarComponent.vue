@@ -86,6 +86,7 @@ nav a:hover::before {
 }
 nav .logo {
   height: 40px;
+  cursor: pointer;
 }
 
 nav .menu {
