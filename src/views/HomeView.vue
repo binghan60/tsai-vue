@@ -1,35 +1,55 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router'
-
+import { RouterLink } from 'vue-router'
 export default {
-  components: { RouterView, RouterLink },
+  components: { RouterLink },
 }
 </script>
 
 <template>
-  <div class="wraper">
-    <div class="container">
-      <div class="logo">
-        <div class="box">
-          <img src="/img/logo.png" alt="" />
-          <h1>蔡氏小農</h1>
-          <p>農產品 | 果物</p>
+  <div class="scroll">
+    <div class="wraper section">
+      <div class="container">
+        <div class="logo">
+          <div class="box">
+            <img src="/img/logo.png" alt="" />
+            <h1>蔡氏小農</h1>
+            <p>農產品 | 果物</p>
+          </div>
         </div>
       </div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="main container">
+        <h3>Since 2022</h3>
+        <RouterLink to="productlist">
+          <button type="button">立即購買</button>
+        </RouterLink>
+      </div>
+      <div class="spacer"></div>
     </div>
-    <div class="spacer"></div>
-    <div class="spacer"></div>
-    <div class="main container">
-      <h3>Since 2022</h3>
-      <RouterLink to="productlist">
-        <button type="button">立即購買</button>
-      </RouterLink>
+
+    <div class="section">
+      <div class="container">第二區</div>
     </div>
-    <div class="spacer"></div>
+    <div class="section">
+      <div class="container">第三區</div>
+    </div>
+    <div class="section">
+      <div class="container">第四區</div>
+    </div>
   </div>
-  <RouterView></RouterView>
 </template>
 <style scoped>
+.scroll {
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.section {
+  /* padding: 112px; */
+  height: calc(100vh - var(--navbar-height));
+  scroll-snap-align: start;
+}
 .wraper {
   width: 100%;
   height: calc(100vh - var(--navbar-height));
