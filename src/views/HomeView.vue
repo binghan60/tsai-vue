@@ -29,7 +29,19 @@ export default {
     </div>
 
     <div class="section">
-      <div class="container">第二區</div>
+      <div class="container">
+        <div class="row">
+          <div class="col about">
+            <img src="/img/about.webp" alt="" />
+          </div>
+          <div class="col story">
+            <h2>關於蔡氏小農</h2>
+            <p>一位28歲返鄉的青農。在外打拼近十年，生活穩定，但每次返鄉探望父母，看到他們漸漸蒼老的模樣，心中總是不捨。於是在2023年，我決定結束北漂生活，回到屏東，建立了<strong>「蔡氏小農」</strong>。</p>
+            <p>其實，蔡家對土地的耕耘早在2013年便由我的父母開始，他們用心栽培蜜棗，深耕技藝，也種下了蔡家對品質的堅持。</p>
+            <p>如今，我承接這份技術與信念，致力於將「蔡氏蜜棗」的純正滋味帶給每一位顧客。對我們來說，蜜棗不僅是水果，更是連結土地與初心的故事。</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section">
       <div class="container">第三區</div>
@@ -49,6 +61,53 @@ export default {
   /* padding: 112px; */
   height: calc(100vh - var(--navbar-height));
   scroll-snap-align: start;
+}
+.section .row {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - var(--navbar-height));
+}
+.section .col {
+  width: 50%;
+}
+.about {
+  height: 80%;
+}
+.about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+  clip-path: polygon(15% 5%, 85% 5%, 100% 25%, 85% 92%, 0% 95%, 1% 52%);
+  transition: transform 0.3s;
+}
+
+.about img:hover {
+  transform: scale(1.05); /* 滑鼠懸停時圖片稍微放大 */
+}
+.story {
+  padding: 50px;
+}
+
+.story h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 40px;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.story p {
+  font-size: 20px;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.story strong {
+  color: #0a84ff; /* 強調的文字顏色 */
 }
 .wraper {
   width: 100%;
@@ -161,6 +220,25 @@ a {
     color: var(--white);
     cursor: pointer;
     white-space: nowrap;
+  }
+  .section .row {
+    flex-direction: column; /* 手機端改為上下排列 */
+    height: auto;
+  }
+
+  .section .col {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .story h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .story p {
+    font-size: 18px;
+    line-height: 1.6rem;
   }
 }
 </style>
