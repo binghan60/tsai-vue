@@ -33,18 +33,27 @@ export default {
         <div class="row">
           <div class="col about">
             <img src="/img/about.webp" alt="" />
+            <div class="info-box">
+              <p>傳承與創新</p>
+              <p>Inheritance and ​Innovation</p>
+            </div>
           </div>
           <div class="col story">
             <h2>關於蔡氏小農</h2>
-            <p>一位28歲返鄉的青農。在外打拼近十年，生活穩定，但每次返鄉探望父母，看到他們漸漸蒼老的模樣，心中總是不捨。於是在2023年，我決定結束北漂生活，回到屏東，建立了<strong>「蔡氏小農」</strong>。</p>
-            <p>其實，蔡家對土地的耕耘早在2013年便由我的父母開始，他們用心栽培蜜棗，深耕技藝，也種下了蔡家對品質的堅持。</p>
-            <p>如今，我承接這份技術與信念，致力於將「蔡氏蜜棗」的純正滋味帶給每一位顧客。對我們來說，蜜棗不僅是水果，更是連結土地與初心的故事。</p>
+            <p>在外工作近十年，每次返鄉見到父母逐漸蒼老，心中總是不捨。於是2023年，我決定結束都市生活，回到屏東創立<strong>「蔡氏小農」</strong>。</p>
+            <p>其實，蔡家對土地的耕耘早在2013年由父母開始，他們專注栽培蜜棗，堅守品質，成就了蔡家的好口碑。</p>
+            <p>如今我承接這份信念，將「蔡氏蜜棗」的純正風味帶給顧客。蜜棗對我們來說，不僅是水果，更是對土地的承諾。</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="section">
-      <div class="container">第三區</div>
+    <div class="section home">
+      <div class="container">
+        <h2>走吧，我們回屏東吧</h2>
+        <p>回家，是靈魂的歸宿。</p>
+        <p>是心靈深處的洗滌與重生。</p>
+        <p>是一次精神的突破，一次全新的開始。</p>
+      </div>
     </div>
     <div class="section">
       <div class="container">第四區</div>
@@ -52,6 +61,31 @@ export default {
   </div>
 </template>
 <style scoped>
+.home {
+  background: url(/img/storyBG.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.home .container {
+  text-align: center;
+  align-items: center;
+}
+.home h2 {
+  font-size: 56px;
+  color: #f4f4f4;
+  font-weight: 900;
+  margin-bottom: 100px;
+}
+
+.home p {
+  font-size: 30px;
+  color: #f4f4f4;
+  font-weight: 900;
+  height: 50px;
+}
+
 .scroll {
   height: calc(100vh - var(--navbar-height));
   overflow-y: scroll;
@@ -71,15 +105,40 @@ export default {
   width: 50%;
 }
 .about {
+  position: relative; /* 設為相對定位，方便內部元素絕對定位 */
   height: 80%;
 }
+
 .about img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  height: 100%;
   margin: auto;
   clip-path: polygon(15% 5%, 85% 5%, 100% 25%, 85% 92%, 0% 95%, 1% 52%);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
+}
+
+.info-box {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  text-align: center;
+  bottom: 10px; /* 距離底部 10px */
+  right: 10px; /* 距離右側 10px */
+  background-color: var(--secondary-color);
+  color: var(--primary-color); /* 文字顏色 */
+  padding: 10px 15px;
+  border-radius: 8px; /* 圓角 */
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 陰影效果 */
+  transition: transform 0.3s;
+}
+
+.info-box:hover {
+  transform: scale(1.1); /* 懸停時稍微放大 */
 }
 
 .about img:hover {
@@ -93,7 +152,7 @@ export default {
   text-align: center;
   margin-bottom: 30px;
   font-size: 40px;
-  color: #333;
+  color: var(--primary-color);
   letter-spacing: 2px;
 }
 
@@ -101,9 +160,9 @@ export default {
   font-size: 20px;
   line-height: 1.8rem;
   letter-spacing: 1px;
-  color: #555;
+  color: var(--primary-color);
   text-align: justify;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .story strong {
@@ -194,6 +253,19 @@ a {
 }
 /* 小螢幕 */
 @media (max-width: 768px) {
+  .home h2 {
+    font-size: 36px;
+    color: #f4f4f4;
+    font-weight: 900;
+    margin-bottom: 100px;
+  }
+
+  .home p {
+    font-size: 20px;
+    color: #f4f4f4;
+    font-weight: 900;
+    height: 50px;
+  }
   .wraper .box {
     margin: auto;
   }
@@ -239,6 +311,13 @@ a {
   .story p {
     font-size: 18px;
     line-height: 1.6rem;
+  }
+
+  .info-box {
+    width: 200px;
+    height: 75px;
+    /* line-height: 70px; */
+    font-size: 16px;
   }
 }
 </style>
