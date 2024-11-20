@@ -6,7 +6,26 @@ export default {
 </script>
 
 <template>
-  <div class="scroll">
+  <div class="h-screen min-h-full bg-cover bg-center bg-no-repeat flex flex-col text-white" style="background-image: url('/img/07f51b1cea86669fc9578201c74d3053.webp')">
+    <div class="container h-full flex flex-col">
+      <div class="flex flex-col lg:flex-row lg:pl-10 items-center pt-10 text-center">
+        <div class="mb-auto">
+          <img src="/img/logo.png" alt="logo" class="w-24 mx-auto select-none" />
+          <h1 class="text-3xl font-bold text-white select-none">蔡氏小農</h1>
+          <p class="text-base tracking-widest select-none">農產品 | 果物</p>
+        </div>
+      </div>
+      <div class="flex-1"></div>
+      <div class="flex flex-col lg:flex-row lg:justify-between items-center text-center border-b-2 border-white/75 pb-9">
+        <h3 class="text-5xl lg:text-8xl font-extrabold mb-6 select-none">Since 2022</h3>
+        <RouterLink to="productlist">
+          <button type="button" class="mt-6 px-16 h-14 text-lg font-bold bg-transparent border-4 border-white text-white transition-all hover:bg-white hover:text-primary hover:border-primary select-none">立即購買</button>
+        </RouterLink>
+      </div>
+      <div class="flex-1"></div>
+    </div>
+  </div>
+  <!-- <div class="scroll">
     <div class="wraper section">
       <div class="container">
         <div class="logo">
@@ -58,7 +77,7 @@ export default {
     <div class="section">
       <div class="container">第四區</div>
     </div>
-  </div>
+  </div> -->
 </template>
 <style scoped>
 .home {
