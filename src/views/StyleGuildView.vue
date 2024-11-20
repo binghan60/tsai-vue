@@ -8,27 +8,27 @@
       <div class="col-span-12 text-center">Colors</div>
       <div class="col-span-4 lg:col-span-2 m-auto">
         <div class="bg-primary w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="text-center m-auto">#50653e</div>
+        <div class="cursor-pointer text-center m-auto">#50653e</div>
       </div>
       <div class="col-span-4 lg:col-span-2 m-auto">
         <div class="bg-secondary w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="text-center m-auto">#a8d08d</div>
+        <div class="cursor-pointer text-center m-auto">#a8d08d</div>
       </div>
       <div class="col-span-4 lg:col-span-2 m-auto">
         <div class="bg-accent1 w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="text-center m-auto">#d1e058</div>
+        <div class="cursor-pointer text-center m-auto">#d1e058</div>
       </div>
       <div class="col-span-4 lg:col-span-2 m-auto">
         <div class="bg-accent2 w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="text-center m-auto">#f1a33e</div>
+        <div class="cursor-pointer text-center m-auto">#f1a33e</div>
       </div>
       <div class="col-span-4 lg:col-span-2 m-auto">
         <div class="bg-border w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="text-center m-auto">#d3d3d3</div>
+        <div class="cursor-pointer text-center m-auto">#d3d3d3</div>
       </div>
       <div class="col-span-4 lg:col-span-2 m-auto">
         <div class="w-10 lg:w-20 h-10 lg:h-20 rounded-full m-auto"></div>
-        <div class="text-center m-auto"></div>
+        <div class="cursor-pointer text-center m-auto"></div>
       </div>
       <div class="col-span-12 text-center">按鈕</div>
       <div class="col-span-6">
