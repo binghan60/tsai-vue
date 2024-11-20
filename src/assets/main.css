@@ -16,6 +16,7 @@
 }
 html {
   overflow: overlay;
+  font-size: 16px;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -38,4 +39,9 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #f5e1c9;
   color: #333;
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
 }
