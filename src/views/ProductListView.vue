@@ -10,7 +10,6 @@
       <div class="product-container">
         <div v-for="item in productlist" :key="item.id" class="product-card">
           <span class="product-category">{{ item.category }}</span>
-          <!-- 新增標籤 -->
           <img :src="item.imageUrl" class="product-image" alt="商品照片" />
           <div class="product-info">
             <h5 class="product-title">{{ item.title }}</h5>
@@ -86,8 +85,8 @@ h2 {
 
 .title img {
   width: 100px;
-  color: rgb(245, 225, 201);
-  background-color: rgb(245, 225, 201);
+  color: #f5e1c9;
+  background-color: #f5e1c9;
 }
 
 .product-container {

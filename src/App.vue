@@ -11,10 +11,3 @@ export default {
   <NavNarComponent></NavNarComponent>
   <RouterView />
 </template>
-
-
-<style>
-body {
-  background-color: var(--bgc);
-}
-</style>

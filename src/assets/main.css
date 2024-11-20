@@ -6,16 +6,19 @@
   --navbar-height: 50px;
   --bgc: #f5e1c9;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 html {
   overflow: overlay;
 }
 ::-webkit-scrollbar {
   display: none;
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 .container {
   width: 1200px;
@@ -27,12 +30,12 @@ input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* 適用於 Firefox */
 input[type='number'] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }
-
 body {
-  background-color: #50653e;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5e1c9;
+  color: #333;
 }
