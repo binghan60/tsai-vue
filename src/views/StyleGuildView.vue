@@ -3,45 +3,45 @@
     <div class="grid grid-cols-12 gap-4 p-5">
       <div class="col-span-12 text-center">
         Logo
-        <img class="h-16 lg:h-24 mx-auto w-100" src="/img/logo.png" alt="" />
+        <img class="h-16 mx-auto lg:h-24 w-100" src="/img/logo.png" alt="" />
       </div>
       <div class="col-span-12 text-center">Colors</div>
-      <div class="col-span-4 lg:col-span-2 m-auto">
-        <div class="bg-primary w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="cursor-pointer text-center m-auto">#50653e</div>
+      <div class="col-span-4 m-auto lg:col-span-2">
+        <div class="w-16 h-16 m-auto rounded-full bg-primary lg:w-20 lg:h-20"></div>
+        <div class="m-auto text-center cursor-pointer">#50653e</div>
       </div>
-      <div class="col-span-4 lg:col-span-2 m-auto">
-        <div class="bg-secondary w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="cursor-pointer text-center m-auto">#a8d08d</div>
+      <div class="col-span-4 m-auto lg:col-span-2">
+        <div class="w-16 h-16 m-auto rounded-full bg-secondary lg:w-20 lg:h-20"></div>
+        <div class="m-auto text-center cursor-pointer">#a8d08d</div>
       </div>
-      <div class="col-span-4 lg:col-span-2 m-auto">
-        <div class="bg-accent1 w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="cursor-pointer text-center m-auto">#d1e058</div>
+      <div class="col-span-4 m-auto lg:col-span-2">
+        <div class="w-16 h-16 m-auto rounded-full bg-accent1 lg:w-20 lg:h-20"></div>
+        <div class="m-auto text-center cursor-pointer">#d1e058</div>
       </div>
-      <div class="col-span-4 lg:col-span-2 m-auto">
-        <div class="bg-accent2 w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="cursor-pointer text-center m-auto">#f1a33e</div>
+      <div class="col-span-4 m-auto lg:col-span-2">
+        <div class="w-16 h-16 m-auto rounded-full bg-accent2 lg:w-20 lg:h-20"></div>
+        <div class="m-auto text-center cursor-pointer">#f1a33e</div>
       </div>
-      <div class="col-span-4 lg:col-span-2 m-auto">
-        <div class="bg-border w-16 lg:w-20 h-16 lg:h-20 rounded-full m-auto"></div>
-        <div class="cursor-pointer text-center m-auto">#d3d3d3</div>
+      <div class="col-span-4 m-auto lg:col-span-2">
+        <div class="w-16 h-16 m-auto rounded-full bg-border lg:w-20 lg:h-20"></div>
+        <div class="m-auto text-center cursor-pointer">#d3d3d3</div>
       </div>
-      <div class="col-span-4 lg:col-span-2 m-auto">
-        <div class="w-10 lg:w-20 h-10 lg:h-20 rounded-full m-auto"></div>
-        <div class="cursor-pointer text-center m-auto"></div>
+      <div class="col-span-4 m-auto lg:col-span-2">
+        <div class="w-10 h-10 m-auto rounded-full lg:w-20 lg:h-20"></div>
+        <div class="m-auto text-center cursor-pointer"></div>
       </div>
       <div class="col-span-12 text-center">按鈕</div>
       <div class="col-span-6">
-        <button class="bg-accent2 h-10 w-full rounded-full text-darkText" type="button">按鈕1</button>
+        <button class="w-full h-10 rounded-full bg-accent2 text-darkText" type="button">按鈕1</button>
       </div>
       <div class="col-span-6">
-        <button class="bg-accent1 h-10 w-full rounded-full text-darkText" type="button">按鈕2</button>
+        <button class="w-full h-10 rounded-full bg-accent1 text-darkText" type="button">按鈕2</button>
       </div>
       <div class="col-span-12 text-center">提示</div>
-      <div class="col-span-6 text-center mt-1 p-4 bg-success rounded-lg text-darkText">成功提示訊息</div>
-      <div class="col-span-6 text-center mt-1 p-4 bg-error rounded-lg text-darkText">錯誤提示訊息</div>
+      <div class="col-span-6 p-4 mt-1 text-center rounded-lg bg-success text-darkText">成功提示訊息</div>
+      <div class="col-span-6 p-4 mt-1 text-center rounded-lg bg-error text-darkText">錯誤提示訊息</div>
       <div class="col-span-12 text-center">邊框</div>
-      <div class="col-span-12 text-center mt-1 p-4 rounded-lg text-darkText border-2 border-border">邊框展示</div>
+      <div class="col-span-12 p-4 mt-1 text-center border-2 rounded-lg text-darkText border-border">邊框展示</div>
       <div class="col-span-12 text-center">文字顏色</div>
       <div class="col-span-6 text-center text-darkText">深色文字</div>
       <div class="col-span-6 text-center text-lightText">淺色文字</div>
