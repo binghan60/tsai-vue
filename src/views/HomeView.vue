@@ -25,10 +25,9 @@ export default {
       <div class="flex-1"></div>
     </div>
   </div>
-  <section class="section min-h-screen flex items-center scroll-snap-start">
+  <section class="min-h-screen flex items-center scroll-snap-start">
     <div class="container mx-auto px-4">
       <div class="row flex flex-col lg:flex-row items-center lg:space-x-8">
-        <!-- 圖片與資訊 -->
         <div class="col about relative w-full lg:w-1/2 mb-8 lg:mb-0">
           <img src="/img/about.webp" alt="關於蔡氏小農" class="w-full object-cover h-[80%] lg:h-[400px] rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" />
           <div class="info-box absolute bottom-4 right-4 bg-secondary text-primary font-bold text-center py-2 px-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-110">
@@ -36,7 +35,6 @@ export default {
             <p>Inheritance and Innovation</p>
           </div>
         </div>
-        <!-- 故事文字 -->
         <div class="col story w-full lg:w-1/2 text-left">
           <h2 class="text-4xl font-extrabold text-primary mb-6 text-center lg:text-left tracking-wider">關於蔡氏小農</h2>
           <p class="text-lg text-primary leading-relaxed mb-4 bg-yellow-50 border-l-4 border-yellow-300 pl-4 py-2">
